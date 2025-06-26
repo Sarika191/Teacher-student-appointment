@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Student-Teacher Appointment</title>
+  <link rel="stylesheet" href="login.css"> 
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <style>
+    .home-icon {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 29px;
+      color: #a7adb9;
+      transition: background 0.3s ease, transform 0.2s ease;
+      text-decoration: none;
+    }
+    .home-icon:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="material-symbols-outlined home-icon">home</a>
+  
+  <div class="login-container">
+    <div class="login-form">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div class="input-group">
+    <input type="email" id="email" placeholder="Enter your email" required autocomplete="off" />
+
+        </div>
+        <div class="input-group">
+          <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+        <div class="forgot-password">
+          <a href="forgot-password.html">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <p>Don't have an account? <a href="register.html">Register here</a></p>
+      </form>
+    </div>
+  </div>
+ <script src="nointernet.js"></script>
+  <script type="module" src="./firebase-config.js"></script>
+  <script type="module" src="login.js"></script> 
+</body>
+</html>

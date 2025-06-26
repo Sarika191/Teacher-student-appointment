@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teacher Dashboard</title>
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+<link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand+Pre:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="logout-btn">
+  <button onclick="logout()">
+    <span class="material-symbols-outlined">exit_to_app</span>Logout
+  </button>
+</div>
+  <div class="admin-container">
+   <div class="dashboard-header">
+ 
+ <h1 style="font-family: 'Edu VIC WA NT Hand Pre', cursive; font-weight: 450 ;">Teacher Dashboard</h1>
+</div>
+    <div class="dashboard-section">
+      <h2>Schedule Appointment</h2>
+      <form id="scheduleForm">
+     <select id="studentSelect" required>
+  <option value="">Select Student</option>
+</select>
+
+        <input type="datetime-local" id="appointmentTime" required>
+        <textarea id="purpose" placeholder="Purpose" rows="3" required></textarea>
+        <br>
+        <center>
+        <button type="submit">Schedule</button>
+        </center>
+      </form>
+    </div>
+
+<br>
+<div class="dashboard-section">
+  <h2>Pending Appointments</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Email</th>
+        <th>Purpose</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="pendingAppointments"></tbody>
+  </table>
+</div>
+<br>
+
+
+<br>
+
+<div class="dashboard-section">
+  <h2>All Appointments</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Email</th>
+        <th>Purpose</th>
+        <th>Time</th>
+        <th>Status</th>
+         <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="allAppointments"></tbody>
+  </table>
+</div>
+ <script src="nointernet.js"></script>
+<script type="module" src="firebase-config.js"></script>
+<script type="module" src="teacher.js"></script>
+</body>
+</html>

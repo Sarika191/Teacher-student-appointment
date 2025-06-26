@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - Student-Teacher Appointment</title>
+  <link rel="stylesheet" href="login.css" />
+   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <style>
+    .home-icon {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 29px;
+      color: #a7adb9;
+      transition: background 0.3s ease, transform 0.2s ease;
+      text-decoration: none;
+    }
+    .home-icon:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="material-symbols-outlined home-icon">home</a>
+  <div class="register-container">
+    <div class="register-form">
+      <h2>Register</h2>
+      <form id="registerForm">
+        <div class="input-group">
+          <input type="text" id="name" placeholder="Enter your name" required />
+        </div>
+        <div class="input-group">
+          <input type="email" id="email" placeholder="Enter your email" required />
+        </div>
+        <div class="input-group">
+          <input type="password" id="password" placeholder="Enter your password" required />
+        </div>
+        <div class="input-group">
+          <label for="role">Select your role</label>
+          <select id="role" required>
+            <option value="" disabled selected>Select your role</option>
+            <option value="admin">Admin</option>
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+          </select>
+        </div>
+
+        <div id="teacherFields" style="display:none;">
+          <div class="input-group">
+            <input type="text" id="department" placeholder="Department">
+          </div>
+          <div class="input-group">
+            <input type="text" id="subject" placeholder="Subject">
+          </div>
+        </div>
+
+        <button type="submit" class="btn">Register</button>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+      </form>
+    </div>
+  </div>
+ <script src="nointernet.js"></script>
+  <script type="module" src="./firebase-config.js"></script>
+  <script type="module" src="./register.js"></script>
+
+  <script>
+    document.getElementById("role").addEventListener("change", function() {
+      const role = this.value;
+      const teacherFields = document.getElementById("teacherFields");
+      teacherFields.style.display = (role === "teacher") ? "block" : "none";
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Dashboard</title>
+  <!-- Update the link path to your CSS file if necessary -->
+ <link rel="stylesheet" href="base.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+<link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand+Pre:wght@400..700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="logout-btn">
+  <button onclick="window.location.href='index.html';">
+    <span class="material-symbols-outlined">logout</span> Logout
+  </button>
+</div>
+
+
+  <div class="admin-container">
+ <div class="dashboard-header">
+  <h1 style="font-family: 'Edu VIC WA NT Hand Pre', cursive; font-weight: 450 ;">Student Dashboard</h1>
+</div>
+
+   <div class="dashboard-section">
+  <h2>Book Appointment</h2>
+  <form id="appointmentForm">
+
+    <!-- Department dropdown -->
+    <select id="departmentSelect" required>
+      <option value="" disabled selected>Select Department</option>
+    </select>
+
+    <!-- Teacher dropdown -->
+    <select id="selectedTeacher" required disabled>
+      <option value="" disabled selected>Select Teacher</option>
+    </select>
+
+    <input type="datetime-local" id="appointmentTime" required>
+    <textarea id="purpose" placeholder="Purpose or your message here" required></textarea>
+    <center>
+      <button type="submit">Book Appointment</button>
+    </center>
+  </form>
+  <h2>My Appointments</h2>
+  <table id="appointmentsTable">
+    <thead>
+      <tr>
+        <th>Department</th>
+        <th>Teacher</th>
+        <th>Date</th>
+        <th>Purpose</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="appointmentsList"></tbody>
+  </table>
+</div>
+  </div>
+
+ <script src="nointernet.js"></script>
+<script type="module" src="firebase-config.js"></script>
+<script type="module" src="student.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand+Pre:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="base.css">
+
+</head>
+
+<body>
+  <!-- Logout button -->
+  <div class="logout-btn">
+    <button onclick="window.location.href='index.html';">
+      <span class="material-symbols-outlined">logout</span> Logout
+    </button>
+  </div>
+
+  <div class="admin-container">
+
+    <!-- Dashboard Header -->
+    <div class="dashboard-header">
+     <h1 style="font-family:'Edu VIC WA NT Hand Pre', cursive; font-weight: 450 ;">Admin Dashboard</h1>
+    </div>
+
+    <!-- Add Teacher Section -->
+    <div class="admin-section">
+      <h2>Add Teacher</h2>
+      <form id="addTeacherForm">
+        <input type="text" id="teacherName" placeholder="Name" required>
+        <input type="text" id="department" placeholder="Department" required>
+        <input type="text" id="subject" placeholder="Subject" required>
+        <input type="text" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+
+        <br>
+        <center><button type="submit">Add Teacher</button></center>
+      </form>
+    </div>
+<br>
+    <!-- Pending Students Section -->
+    <div class="admin-section">
+      <h2>Pending Student </h2>
+      <table id="pendingStudentTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="pendingStudentList"></tbody>
+      </table>
+    </div>
+<br>
+    <!-- All Teachers Section -->
+    <div class="admin-section">
+      <h2>All Teachers</h2>
+      <table id="teacherTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Subject</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="teacherList"></tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div id="custom-alert" class="custom-alert hidden">
+  <div class="custom-alert-box">
+    <p id="custom-alert-msg"></p>
+    <button onclick="closeCustomAlert()">OK</button>
+  </div>
+</div>
+
+ <script src="nointernet.js"></script>
+   <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="admin.js"></script>
+  <script type="module" src="pendingstudent.js"></script>
+</body>
+</html>
