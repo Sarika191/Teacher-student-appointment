@@ -15,24 +15,43 @@
 }
 
 
+html, body {
+  height: 100%;
+  margin: 0;
+  
+  padding-top: 25px;
+}
+
 body {
   position: relative;
-  background:#cdf1d2;
+  background: url("https://images.wallpaperscraft.com/image/single/headphones_books_education_121501_2560x1440.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: var(--text);
   z-index: 1;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4); /* darker overlay */
+  z-index: -1;
+}
+
 .container, .admin-container {
-  max-width: 90%;
-  min-height: 80vh;
+  max-width: 80%;
+  overflow-x: auto;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background: var(--card-bg);
-  padding: 2rem;
+  padding-left: 3rem;
+  padding-right: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
@@ -194,7 +213,7 @@ button:not(.deleteBtn):not(.updateBtn):not(.logout-btn button):hover,
 
 table {
    table-layout: 90%;
-  width: 100%;
+  width: 90%;
   border-spacing: 0;
   margin-top: 1rem;
   border-collapse:collapse;
