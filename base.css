@@ -288,7 +288,7 @@ tr:hover {
 @media (max-width: 768px) {
   body {
     padding: 1rem;
-    background-position: top;
+    background-position: center;
   }
 
   .container, .admin-container {
