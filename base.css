@@ -14,33 +14,20 @@
   box-sizing: border-box;
 }
 
-
-html, body {
+html {
   height: 100%;
-  margin: 0;
-  
-  padding-top: 25px;
+  background: #eaeaea;
 }
 
 body {
-  position: relative;
+  min-height: 100%;
   background: url("https://images.wallpaperscraft.com/image/single/headphones_books_education_121501_2560x1440.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: var(--text);
-  z-index: 1;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4); /* darker overlay */
-  z-index: -1;
+  padding-top: 25px;
 }
 
 .container, .admin-container {
@@ -48,17 +35,13 @@ body::before {
   overflow-x: auto;
   margin: auto;
   background: var(--card-bg);
-  padding-left: 3rem;
-  padding-right: 4rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 2rem 4rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
 
 .dashboard-header {
   text-align: center;
-  
   margin-bottom: 3rem;
   border-bottom: 3px solid transparent;
   background-image: linear-gradient(to right, #d6e84e, #c76893, #389edd);
@@ -75,8 +58,7 @@ h1, h2, h3 {
 
 input, select, textarea {
   width: 90%;
-  padding: 0.75rem;
-  padding-left: 0.8rem;
+  padding: 0.75rem 0.8rem;
   border: 1px solid #ccc;
   border-radius: var(--radius);
   margin-bottom: 1rem;
@@ -92,11 +74,9 @@ input:focus, select:focus, textarea:focus {
   outline: none;
 }
 
-
-
 .logout-btn {
   position: absolute;
-  top: 0rem;
+  top: 1rem;
   right: 1rem;
   z-index: 800;
 }
@@ -171,7 +151,7 @@ button.updateBtn:hover {
 }
 
 button, .btn {
-  background:  linear-gradient(to right, #345a3470,#e4dc8b90, #1e900558); 
+  background: linear-gradient(to right, #345a3470,#e4dc8b90, #1e900558); 
   color: #1d1c1c;
   border: 1px solid rgba(22, 48, 13, 0.227); 
   padding: 0.5rem 2rem;
@@ -189,7 +169,7 @@ button:not(.deleteBtn):not(.updateBtn):not(.logout-btn button):hover,
 .btn:hover {
   font-weight: 600;
   font-size: 13px;
-  background:linear-gradient(to right, #b999a5,#e0dcb4, #c54668);
+  background: linear-gradient(to right, #b999a5,#e0dcb4, #c54668);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.644);
   border-color: rgba(255, 255, 255, 0.4);
@@ -202,7 +182,6 @@ button:not(.deleteBtn):not(.updateBtn):not(.logout-btn button):hover,
   margin-top: 2rem;
 }
 
-
 .cell-content {
   margin: 8px;
   padding: 8px 16px;
@@ -212,57 +191,42 @@ button:not(.deleteBtn):not(.updateBtn):not(.logout-btn button):hover,
 }
 
 table {
-   table-layout: 90%;
   width: 90%;
   border-spacing: 0;
   margin-top: 1rem;
-  border-collapse:collapse;
+  border-collapse: collapse;
   box-shadow: 0 0 10px rgba(92, 91, 91, 0.7);
-
 }
+
 td, th {
-  /* word-wrap: break-word; */
   max-width: 150px; 
   padding: 9px;
   text-align: left;
 }
 
 th {
-  background: linear-gradient(to right, #354343, #536753); /* dark, calming */
-  color: #f3f3f3; 
+  background: linear-gradient(to right, #354343, #536753);
+  color: #f3f3f3;
   font-weight: 550;
   font-size: 1rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 12px 16px;
-  text-align: left;
   border-bottom: 2px solid #4b4b4b;
 }
 
-
 td {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background-color: #e4e8e8; 
+  background-color: #e4e8e8;
   color: #0f262c;
   padding: 12px 16px;
   font-size: 0.98rem;
   border-bottom: 1px solid #c3bebe;
 }
 
-
-
 tr:hover {
   background-color: rgba(18, 135, 14, 0.1);
 }
 
-@media (max-width: 768px) {
-  body {
-    padding: 1rem;
-  }
-
-  input, select, textarea {
-    width: 100%;
-  }
-}
 .custom-alert {
   position: fixed;
   top: 0; left: 0;
@@ -312,4 +276,27 @@ tr:hover {
 @keyframes popIn {
   from { transform: scale(0.85); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+    background-position: top;
+  }
+
+  .container, .admin-container {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .logout-btn {
+    position: static;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .logout-btn button {
+    width: 15%;
+    justify-content: center;
+  }
 }
