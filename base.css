@@ -22,7 +22,8 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: #ebf6ed;
+  background: url("https://images.wallpaperscraft.com/image/single/headphones_books_education_121501_2560x1440.jpg");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -33,7 +34,24 @@ body {
   padding: 2rem;
 }
 
+/* --- CONTAINER --- */
+.container, .admin-container {
+  max-width: 800px;
+  width: 90%;
+  margin: auto;
+  background: var(--card-bg);
+  padding: 3rem 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.container > *, .admin-container > * {
+  width: 100%;
+  max-width: 600px;
+}
 
 /* --- HEADER --- */
 .dashboard-header {
@@ -277,10 +295,10 @@ tr:hover {
     margin: 0;
     padding: 0;
     display: flex;
-/*     flex-direction: column;
+    flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background-position: center; */
+    background-position: center;
     overflow-x: hidden;
   }
 
