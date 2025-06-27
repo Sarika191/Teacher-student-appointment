@@ -23,7 +23,7 @@ body {
   background-color: #faf6fe;
   padding: 30px;
   border-radius: 12px;
-  width: 320px;
+  width: 380px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
   position: relative;
   z-index: 1;
@@ -210,8 +210,8 @@ p {
 
   .login-container,
   .register-container {
-    width: 100%;
-    max-width: 360px;
+    width: 90%;
+    max-width: 300px;
     margin-top: 20px;
   }
 
