@@ -14,28 +14,27 @@
   box-sizing: border-box;
 }
 
-html {
+html, body {
   height: 100%;
-  background: #eaeaea;
   scroll-behavior: smooth;
 }
 
 body {
-  min-height: 100vh;
-  background: url("https://images.wallpaperscraft.com/image/single/headphones_books_education_121501_2560x1440.jpg");
+  background: url("https://images.wallpaperscraft.com/image/single/headphones_books_education_121501_2560x1440.jpg") no-repeat center center fixed;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text);
-  padding-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
-
-.container, .admin-container {
+/* -------- CONTAINER -------- */
+.container,
+.admin-container {
   max-width: 800px;
   width: 90%;
-  margin: auto;
   background: var(--card-bg);
   padding: 3rem 2.5rem;
   border-radius: var(--radius);
@@ -45,13 +44,13 @@ body {
   align-items: center;
 }
 
-
-.container > *, .admin-container > * {
+.container > *,
+.admin-container > * {
   width: 100%;
   max-width: 600px;
 }
 
-
+/* -------- HEADER -------- */
 .dashboard-header {
   text-align: center;
   margin-bottom: 2.5rem;
@@ -69,7 +68,7 @@ h1, h2, h3 {
   font-weight: 600;
 }
 
-
+/* -------- FORM ELEMENTS -------- */
 input, select, textarea {
   width: 100%;
   padding: 0.85rem 1rem;
@@ -88,7 +87,7 @@ input:focus, select:focus, textarea:focus {
   outline: none;
 }
 
-
+/* -------- BUTTONS -------- */
 button, .btn {
   background: linear-gradient(to right, #345a3470, #e4dc8b90, #1e900558); 
   color: #1d1c1c;
@@ -111,14 +110,14 @@ button:hover, .btn:hover {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
 }
 
-/* --- DELETE & UPDATE BUTTONS --- */
+/* DELETE & UPDATE BUTTONS */
 button.deleteBtn {
   background: transparent;
   color: #9f3024;
   border: 1px solid #9c1e0f;
   padding: 5px 10px;
   border-radius: 20px;
-   margin-bottom: 3px;
+  margin-bottom: 3px;
   cursor: pointer;
   transition: 0.3s;
   font-weight: 500;
@@ -145,6 +144,18 @@ button.updateBtn:hover {
   color: white;
 }
 
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.action-buttons button {
+  flex: 0.7;
+  white-space: nowrap;
+}
+
+/* -------- LOGOUT -------- */
 .logout-btn {
   position: absolute;
   top: 1rem;
@@ -188,18 +199,7 @@ button.updateBtn:hover {
   transform: translateX(9px) rotate(-369deg);
 }
 
-.action-buttons {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.action-buttons button {
-  flex: 0.7;
-  white-space: nowrap;
-}
-
-/* --- TABLE --- */
+/* -------- TABLE -------- */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -232,7 +232,7 @@ tr:hover {
   background-color: rgba(18, 135, 14, 0.1);
 }
 
-/* --- ALERT BOX --- */
+/* -------- ALERT BOX -------- */
 .custom-alert {
   position: fixed;
   top: 0; left: 0;
@@ -284,12 +284,11 @@ tr:hover {
   to { transform: scale(1); opacity: 1; }
 }
 
-/* --- MOBILE RESPONSIVE --- */
+/* -------- MOBILE -------- */
 @media (max-width: 768px) {
   body {
     padding: 1rem;
-    background-position: center;
-        flex-direction: column;
+    flex-direction: column;
   }
 
   .container,
@@ -298,7 +297,6 @@ tr:hover {
     padding: 2rem 1.5rem;
   }
 
-
   .logout-btn {
     position: static;
     text-align: center;
@@ -306,11 +304,7 @@ tr:hover {
   }
 
   .logout-btn button {
-    width: 15%;
+    width: auto;
     justify-content: center;
-  }
-
-  input, select, textarea {
-    font-size: 1rem;
   }
 }
