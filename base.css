@@ -31,7 +31,7 @@ body {
   padding-top: 25px;
 }
 
-/* --- CONTAINER --- */
+
 .container, .admin-container {
   max-width: 800px;
   width: 90%;
@@ -45,13 +45,13 @@ body {
   align-items: center;
 }
 
-/* --- CENTER CONTENT BLOCKS --- */
+
 .container > *, .admin-container > * {
   width: 100%;
   max-width: 600px;
 }
 
-/* --- HEADER --- */
+
 .dashboard-header {
   text-align: center;
   margin-bottom: 2.5rem;
@@ -69,7 +69,7 @@ h1, h2, h3 {
   font-weight: 600;
 }
 
-/* --- FORM FIELDS --- */
+
 input, select, textarea {
   width: 100%;
   padding: 0.85rem 1rem;
@@ -88,7 +88,7 @@ input:focus, select:focus, textarea:focus {
   outline: none;
 }
 
-/* --- BUTTONS --- */
+
 button, .btn {
   background: linear-gradient(to right, #345a3470, #e4dc8b90, #1e900558); 
   color: #1d1c1c;
@@ -106,7 +106,7 @@ button, .btn {
 
 button:hover, .btn:hover {
   background: linear-gradient(to right, #b999a5, #e0dcb4, #c54668);
-  color: #fff;
+  color: #494545;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
 }
@@ -118,6 +118,7 @@ button.deleteBtn {
   border: 1px solid #9c1e0f;
   padding: 5px 10px;
   border-radius: 20px;
+   margin-bottom: 3px;
   cursor: pointer;
   transition: 0.3s;
   font-weight: 500;
@@ -144,7 +145,6 @@ button.updateBtn:hover {
   color: white;
 }
 
-/* --- LOGOUT BUTTON --- */
 .logout-btn {
   position: absolute;
   top: 1rem;
@@ -159,7 +159,7 @@ button.updateBtn:hover {
   background: linear-gradient(to right, #1e5933ad, #5367539f);
   color: #ffffff;
   padding: 0.4rem 0.8rem;
-  border: 2px solid #13341134;
+  border: 2px solid #1334117e;
   border-radius: 50px;
   font-weight: 540;
   cursor: pointer;
@@ -172,7 +172,8 @@ button.updateBtn:hover {
 
 .logout-btn button:hover {
   background: linear-gradient(to right, #5c8c5a73, #dce1a0aa);
-  border: 2px solid #6c9467;
+  border: 2px solid #60815c;
+  box-shadow: 0 3px 10px rgba(209, 207, 153, 0.351);
   transform: scale(1.05);
 }
 
@@ -185,6 +186,17 @@ button.updateBtn:hover {
 
 .logout-btn button:hover .material-symbols-outlined {
   transform: translateX(9px) rotate(-369deg);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.action-buttons button {
+  flex: 0.7;
+  white-space: nowrap;
 }
 
 /* --- TABLE --- */
@@ -291,7 +303,7 @@ tr:hover {
   }
 
   .logout-btn button {
-    width: 100%;
+    width: 15%;
     justify-content: center;
   }
 
