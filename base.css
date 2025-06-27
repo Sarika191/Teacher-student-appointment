@@ -289,12 +289,15 @@ tr:hover {
   body {
     padding: 1rem;
     background-position: center;
+        flex-direction: column;
   }
 
-  .container, .admin-container {
-    width: 100%;
-    padding: 1.5rem 1rem;
+  .container,
+  .admin-container {
+    width: 95%;
+    padding: 2rem 1.5rem;
   }
+
 
   .logout-btn {
     position: static;
