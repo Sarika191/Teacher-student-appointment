@@ -28,10 +28,13 @@ body {
   background-repeat: no-repeat;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text);
-  padding-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
-
+/* --- CONTAINER --- */
 .container, .admin-container {
   max-width: 800px;
   width: 90%;
@@ -45,13 +48,12 @@ body {
   align-items: center;
 }
 
-
 .container > *, .admin-container > * {
   width: 100%;
   max-width: 600px;
 }
 
-
+/* --- HEADER --- */
 .dashboard-header {
   text-align: center;
   margin-bottom: 2.5rem;
@@ -69,7 +71,7 @@ h1, h2, h3 {
   font-weight: 600;
 }
 
-
+/* --- FORM ELEMENTS --- */
 input, select, textarea {
   width: 100%;
   padding: 0.85rem 1rem;
@@ -88,11 +90,11 @@ input:focus, select:focus, textarea:focus {
   outline: none;
 }
 
-
+/* --- BUTTONS --- */
 button, .btn {
-  background: linear-gradient(to right, #345a3470, #e4dc8b90, #1e900558); 
+  background: linear-gradient(to right, #345a3470, #e4dc8b90, #1e900558);
   color: #1d1c1c;
-  border: 1px solid rgba(22, 48, 13, 0.227); 
+  border: 1px solid rgba(22, 48, 13, 0.227);
   padding: 0.6rem 2rem;
   border-radius: var(--radius);
   cursor: pointer;
@@ -118,7 +120,7 @@ button.deleteBtn {
   border: 1px solid #9c1e0f;
   padding: 5px 10px;
   border-radius: 20px;
-   margin-bottom: 3px;
+  margin-bottom: 3px;
   cursor: pointer;
   transition: 0.3s;
   font-weight: 500;
@@ -145,6 +147,7 @@ button.updateBtn:hover {
   color: white;
 }
 
+/* --- LOGOUT BUTTON --- */
 .logout-btn {
   position: absolute;
   top: 1rem;
@@ -188,6 +191,7 @@ button.updateBtn:hover {
   transform: translateX(9px) rotate(-369deg);
 }
 
+/* --- ACTION BUTTONS --- */
 .action-buttons {
   display: flex;
   gap: 10px;
@@ -284,10 +288,18 @@ tr:hover {
   to { transform: scale(1); opacity: 1; }
 }
 
+/* --- MOBILE RESPONSIVE --- */
 @media (max-width: 768px) {
-  body {
-    padding: 1rem;
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     background-position: center;
+    overflow-x: hidden;
   }
 
   .container,
@@ -296,9 +308,8 @@ tr:hover {
     padding: 2rem 1.5rem;
   }
 
-  /* Zoom effect for admin container */
   .admin-container {
-    transform: scale(1.08);
+    transform: scale(1.15);
     transform-origin: top center;
     transition: transform 0.3s ease-in-out;
   }
@@ -310,7 +321,7 @@ tr:hover {
   }
 
   .logout-btn button {
-    width: 15%;
+    width: auto;
     justify-content: center;
   }
 
