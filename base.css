@@ -17,55 +17,69 @@
 html {
   height: 100%;
   background: #eaeaea;
+  scroll-behavior: smooth;
 }
 
 body {
-  min-height: 100%;
+  min-height: 100vh;
   background: url("https://images.wallpaperscraft.com/image/single/headphones_books_education_121501_2560x1440.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text);
   padding-top: 25px;
 }
 
+/* --- CONTAINER --- */
 .container, .admin-container {
-  max-width: 80%;
-  overflow-x: auto;
+  max-width: 800px;
+  width: 90%;
   margin: auto;
   background: var(--card-bg);
-  padding: 2rem 4rem;
+  padding: 3rem 2.5rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* --- CENTER CONTENT BLOCKS --- */
+.container > *, .admin-container > * {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* --- HEADER --- */
 .dashboard-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 0.5rem;
   border-bottom: 3px solid transparent;
   background-image: linear-gradient(to right, #d6e84e, #c76893, #389edd);
   background-repeat: no-repeat;
   background-position: bottom center;
-  background-size: 50% 3px;
+  background-size: 60% 3px;
 }
 
 h1, h2, h3 {
   color: var(--primary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   font-weight: 600;
 }
 
+/* --- FORM FIELDS --- */
 input, select, textarea {
-  width: 90%;
-  padding: 0.75rem 0.8rem;
+  width: 100%;
+  padding: 0.85rem 1rem;
   border: 1px solid #ccc;
   border-radius: var(--radius);
-  margin-bottom: 1rem;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 0.8rem;
+  margin-bottom: 1.3rem;
+  font-size: 0.95rem;
   background: linear-gradient(to right, #ccd38b3b, #3196311d);
   transition: all 0.3s ease;
+  text-align: left;
 }
 
 input:focus, select:focus, textarea:focus {
@@ -74,50 +88,30 @@ input:focus, select:focus, textarea:focus {
   outline: none;
 }
 
-.logout-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 800;
-}
-
-.logout-btn button {
-  font-family: "Macondo", cursive;
-  font-size: 0.95rem;
-  letter-spacing: 0.3px;
-  background: linear-gradient(to right, #1e5933ad, #5367539f);
-  color: #ffffff;
-  padding: 0.4rem 0.8rem;
-  border: 2px solid #13341134;
-  border-radius: 50px;
-  font-weight: 540;
+/* --- BUTTONS --- */
+button, .btn {
+  background: linear-gradient(to right, #345a3470, #e4dc8b90, #1e900558); 
+  color: #1d1c1c;
+  border: 1px solid rgba(22, 48, 13, 0.227); 
+  padding: 0.6rem 2rem;
+  border-radius: var(--radius);
   cursor: pointer;
-  box-shadow: 0 3px 10px rgba(181, 43, 43, 0.1);
-  transition: all 0.4s ease;
-  display: flex;
-  align-items: center;
-  gap: 5px;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 550;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.logout-btn button:hover {
-  background: linear-gradient(to right, #5c8c5a73, #dce1a0aa);
-  color: #ffffff;
-  border: 2px solid #6c9467;
-  box-shadow: 0 6px 18px rgba(249, 255, 161, 0.329);
-  transform: scale(1.05);
+button:hover, .btn:hover {
+  background: linear-gradient(to right, #b999a5, #e0dcb4, #c54668);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
 }
 
-.material-symbols-outlined {
-  font-size: 20px;
-  vertical-align: middle;
-  margin-right: 6px;
-  transition: transform 0.3s ease;
-}
-
-.logout-btn button:hover .material-symbols-outlined {
-  transform: translateX(9px) rotate(-369deg);
-}
-
+/* --- DELETE & UPDATE BUTTONS --- */
 button.deleteBtn {
   background: transparent;
   color: #9f3024;
@@ -150,58 +144,63 @@ button.updateBtn:hover {
   color: white;
 }
 
-button, .btn {
-  background: linear-gradient(to right, #345a3470,#e4dc8b90, #1e900558); 
-  color: #1d1c1c;
-  border: 1px solid rgba(22, 48, 13, 0.227); 
-  padding: 0.5rem 2rem;
-  border-radius: var(--radius);
+/* --- LOGOUT BUTTON --- */
+.logout-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 800;
+}
+
+.logout-btn button {
+  font-family: "Macondo", cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  background: linear-gradient(to right, #1e5933ad, #5367539f);
+  color: #ffffff;
+  padding: 0.4rem 0.8rem;
+  border: 2px solid #13341134;
+  border-radius: 50px;
+  font-weight: 540;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 0.8rem;
-  font-family: 'Edu VIC WA NT Hand Pre', cursive;
-  font-weight: 550;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.375);
-  display: inline-block;
-}
-
-button:not(.deleteBtn):not(.updateBtn):not(.logout-btn button):hover,
-.btn:hover {
-  font-weight: 600;
-  font-size: 13px;
-  background: linear-gradient(to right, #b999a5,#e0dcb4, #c54668);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.644);
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-.button-wrapper {
+  box-shadow: 0 3px 10px rgba(181, 43, 43, 0.1);
+  transition: all 0.4s ease;
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  gap: 5px;
 }
 
-.cell-content {
-  margin: 8px;
-  padding: 8px 16px;
-  border-radius: 10px;
-  background-color: #f9f9f953;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+.logout-btn button:hover {
+  background: linear-gradient(to right, #5c8c5a73, #dce1a0aa);
+  border: 2px solid #6c9467;
+  transform: scale(1.05);
 }
 
+.material-symbols-outlined {
+  font-size: 20px;
+  vertical-align: middle;
+  margin-right: 6px;
+  transition: transform 0.3s ease;
+}
+
+.logout-btn button:hover .material-symbols-outlined {
+  transform: translateX(9px) rotate(-369deg);
+}
+
+/* --- TABLE --- */
 table {
-  width: 90%;
-  border-spacing: 0;
-  margin-top: 1rem;
+  width: 100%;
   border-collapse: collapse;
-  box-shadow: 0 0 10px rgba(92, 91, 91, 0.7);
+  margin-top: 1.5rem;
+  box-shadow: 0 0 10px rgba(92, 91, 91, 0.5);
 }
 
-td, th {
-  max-width: 150px; 
-  padding: 9px;
+th, td {
+  padding: 12px 16px;
   text-align: left;
+  border-bottom: 1px solid #ccc;
+  max-width: 200px;
+  word-wrap: break-word;
 }
 
 th {
@@ -209,24 +208,19 @@ th {
   color: #f3f3f3;
   font-weight: 550;
   font-size: 1rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 12px 16px;
-  border-bottom: 2px solid #4b4b4b;
 }
 
 td {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background-color: #e4e8e8;
   color: #0f262c;
-  padding: 12px 16px;
-  font-size: 0.98rem;
-  border-bottom: 1px solid #c3bebe;
+  font-size: 0.96rem;
 }
 
 tr:hover {
   background-color: rgba(18, 135, 14, 0.1);
 }
 
+/* --- ALERT BOX --- */
 .custom-alert {
   position: fixed;
   top: 0; left: 0;
@@ -257,7 +251,7 @@ tr:hover {
 
 .custom-alert-box button {
   padding: 0.5rem 1.3rem;
-  background: var(--primary, #2a4565);
+  background: var(--primary);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -266,7 +260,7 @@ tr:hover {
 }
 
 .custom-alert-box button:hover {
-  background: var(--secondary, #4c6a8b);
+  background: var(--secondary);
 }
 
 .hidden {
@@ -278,6 +272,7 @@ tr:hover {
   to { transform: scale(1); opacity: 1; }
 }
 
+/* --- MOBILE RESPONSIVE --- */
 @media (max-width: 768px) {
   body {
     padding: 1rem;
@@ -285,8 +280,8 @@ tr:hover {
   }
 
   .container, .admin-container {
-    max-width: 100%;
-    padding: 1.5rem;
+    width: 100%;
+    padding: 1.5rem 1rem;
   }
 
   .logout-btn {
@@ -296,7 +291,11 @@ tr:hover {
   }
 
   .logout-btn button {
-    width: 15%;
+    width: 100%;
     justify-content: center;
+  }
+
+  input, select, textarea {
+    font-size: 1rem;
   }
 }
