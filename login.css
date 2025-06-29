@@ -199,7 +199,7 @@ p {
 .firefly:nth-child(7) { left: 80vw; top: 93vh; animation-delay: 3.7s; }
 .firefly:nth-child(8) { left: 90vw; top: 89vh; animation-delay: 2.2s; }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 998px) {
   body {
     flex-direction: column;
     justify-content: center;
