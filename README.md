@@ -1,4 +1,4 @@
-#🧑‍🏫 Teacher-Student Appointment System
+                                                                           🧑‍🏫 Teacher-Student Appointment System
 
 A secure and user-friendly web application that allows students to book appointments with teachers in real-time. Built with Firebase for authentication and database management, this project streamlines the communication process in an academic setting.
 
