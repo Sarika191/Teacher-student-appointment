@@ -73,4 +73,4 @@ __________________________________________________
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/teacher-student-appointment.git
+   git clone https://github.com/Sarika191/Teacher-student-appointment/
